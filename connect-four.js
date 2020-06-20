@@ -22,6 +22,18 @@ function updateUI(){
             clickTarget.classList.add('red');
             clickTarget.classList.remove('black');
         }
+
+        for (let i = 0; i <= 6; i++) {
+            let isFull = game.isColumnFull(i);
+            let currentColumn = `column-${i}`;
+            let column = document.getElementById(currentColumn);
+            if (isFull) {
+                column.classList.add('full');
+            } else {
+                column.classList.remove('full');
+            }
+        }
+
         for (let i = 0; i <= 5; i++) {
             let row = i;
             for (let j = 0; j <= 6; j++) {
@@ -96,7 +108,7 @@ window.addEventListener("DOMContentLoaded", (event) => {
         let columnNum = Number(tempArr[1]);
         // console.log(columnNum);
         game.playInColumn(columnNum);
-        console.log(game.columns);
+
         updateUI();
     })
 

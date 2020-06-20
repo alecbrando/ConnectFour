@@ -15,7 +15,16 @@ export default class Column {
     }
 
     getTokenAt(rowIndex){
-        console.log('It got here')
+        // console.log('It got here')
         return this.tokens[rowIndex];
+    }
+
+    isFull() {
+        for (let i = 0; i < this.tokens.length; i++) {
+            if (this.tokens[i] === null) {
+                return false;
+            } 
+        }
+        return true;
     }
 }
