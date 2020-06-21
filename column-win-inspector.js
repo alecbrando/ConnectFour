@@ -1,21 +1,25 @@
-import Column from "./column.js"
-
+import Column from "./column.js";
 export default class ColumnWinInspector {
     constructor(column) {
         this.column = column;
     }
     inspect() {
-        for(let i = 0; i <= 5; i++){
-    for(let j = i + 1; j <= 5; j++){
-        if (column.getTokenAt(i) === column.getTokenAt(j) && column.getTokenAt(i + 1) === column.getTokenAt(j + 2)){
-            return column.getTokenAt(i);
+        for(let i = 0; i <= 2; i++){
+            const token1 = this.column.getTokenAt(i);
+            const token2 = this.column.getTokenAt(i + 1);
+            const token3 = this.column.getTokenAt(i + 2);
+            const token4 = this.column.getTokenAt(i + 3);
+
+            if(token1 === token2 && token2 === token3 && token3 === token4){
+                return token1;
+            }
         }
-    }
-            return -1;
+            return 0;
 }
-    }
+
+}
     
-}
+
 
 
 
