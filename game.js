@@ -34,6 +34,7 @@ export default class Game {
         }
         this.checkForTie();
         this.checkForColumnWin();
+        this.checkForRowWin();
     }
 
     getCurrentPlayer() {
@@ -64,6 +65,17 @@ export default class Game {
                 return this.winnerNumber;
             } else return;
         }
+    }
+
+    checkForRowWin(){
+        if(this.winnerNumber !== 0) return;
+        const firstThree = this.columns.slice(0,4);
+        const nextThree = this.columns.slice(1,5);
+        const afterThree = this.columns.slice(2, 6);
+        const lastThree = this.columns.slice(3,7);
+
+
+
     }
 
 }
